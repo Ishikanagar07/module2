@@ -1,3 +1,17 @@
 OS => Windows (Powershell)
 
+1) Collect process information
+=>Go to start
+=>Open Task Manager
+=>All the active and background processes are displayed under Process tab
+=>Details of processes icluding name, pid, and status are displayed under Details tab
 
+2) To terminate a specific process
+>>notepad.exe (open notepad)
+>>Get-Process notepad (to get PID of notepad)
+>>taskkil /pid 123  (pid = 123)
+
+3) To terminate multiple processes
+>>notepad.exe (open process 1 eg.notepad)
+>>atom (open process 2 eg.atom)
+>>Get-Process -Name 'notepad','atom' | Stop-Process (pipeline method to kill both processes simultaneously)
